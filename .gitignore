@@ -4,6 +4,5 @@ public
 .idea
 .vscode
 .DS_Store
-.env
 *.log
 gatsby-node.old.js
