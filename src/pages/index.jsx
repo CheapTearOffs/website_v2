@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import { Layout } from "../components/layout"
 import { ProductListing } from "../components/product-listing"
 import { Seo } from "../components/seo"
+import { MoreButton } from "../components/more-button"
+import slugify from "@sindresorhus/slugify"
 import {
   container,
   intro,
@@ -13,9 +15,15 @@ import {
 
 export const query = graphql`
   query {
-    shopifyCollection(handle: { eq: "frontpage" }) {
-      products {
+    allShopifyProduct(
+      sort: { publishedAt: ASC }
+      limit: 24
+    ) {
+      nodes {
         ...ProductCard
+      }
+      pageInfo {
+        hasNextPage
       }
     }
   }
@@ -52,7 +60,7 @@ export default function IndexPage({ data }) {
   return (
     <Layout>
       <Hero />
-      <ProductListing products={data?.shopifyCollection?.products} />
+      <ProductListing products={data?.allShopifyProduct?.nodes} />
     </Layout>
   )
 }

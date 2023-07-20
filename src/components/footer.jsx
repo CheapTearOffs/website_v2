@@ -13,23 +13,23 @@ import {
 export function Footer() {
   return (
     <footer className={footerStyle}>
-      <div className={blurb}>
+      {/* <div className={blurb}>
         <div className={logos}>
           <Logo />
         </div>
         <strong>gatsby-starter-shopify</strong> change this by editing{" "}
         <code>src/components/footer.jsx</code>
-      </div>
+      </div> */}
       <nav className={links} aria-label="footer">
         <ul className={footerNavList}>
-          <li className={footerNavListItem}>
+          {/* <li className={footerNavListItem}>
             <a href="https://github.com/gatsbyjs/gatsby-starter-shopify">
               Source Code and Docs
             </a>
           </li>
           <li className={footerNavListItem}>
             <a href="https://www.gatsbyjs.com/cloud/">About Gatsby Cloud</a>
-          </li>
+          </li> */}
           {process.env.GATSBY_DEMO_STORE === "true" && (
             <li className={footerNavListItem}>
               <a href="https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-shopify&utm_campaign=shopify-starter">
@@ -45,7 +45,7 @@ export function Footer() {
         </ul>
       </nav>
       <div className={copyright}>
-        Copyright &copy; {new Date().getFullYear()} · All rights reserved
+        Copyright CheapTearOffs&copy; {new Date().getFullYear()} · All rights reserved
       </div>
     </footer>
   )
