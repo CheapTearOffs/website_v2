@@ -1,9 +1,11 @@
+body, html {
+  height: 100%;
+}
+
 .container {
-  padding-left: var(--size-gutter-raw);
-  padding-right: var(--size-gutter-raw);
-  padding-top: var(--space-lg);
-  padding-bottom: var(--space-3xl);
-  max-width: 76ch;
+  background: url("../../static/bg_home_helmet.png") no-repeat center center fixed;
+  background-size: cover;
+  padding: 15em;
 }
 
 .intro {

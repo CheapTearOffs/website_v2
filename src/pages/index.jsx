@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { Layout } from "../components/layout"
 import { ProductListing } from "../components/product-listing"
 import { Seo } from "../components/seo"
@@ -12,6 +12,8 @@ import {
   callToAction,
   deployButton,
 } from "./index.module.css"
+
+import Logo from "../icons/logo"
 
 export const query = graphql`
   query {
@@ -31,7 +33,12 @@ export const query = graphql`
 function Hero (props) {
   return (
     <div className={container}>
-      <h1 className={intro}>Welcome to the GatsbyJS + Shopify Demo Store.</h1>
+      <h1 className={intro}>
+        <Link to="/">
+          <Logo />
+        </Link>
+
+      </h1>
       {!!process.env.GATSBY_DEMO_STORE && (
         <>
           <p className={callOut}>
